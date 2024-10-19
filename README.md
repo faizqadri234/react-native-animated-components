@@ -59,21 +59,80 @@ Now that you have successfully run the app, let's modify it.
 
 You've successfully run and modified your React Native App. :partying_face:
 
-### Now what?
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
 
-# Troubleshooting
+# react-native-animated-flatlist
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+`react-native-animated-flatlist` is an extended version of the `FlatList` component with built-in animations, providing smoother and more dynamic scrolling experiences. It supports all the original `FlatList` props and is available for both iOS and Android platforms.
 
-# Learn More
+## Features
 
-To learn more about React Native, take a look at the following resources:
+- Smooth animations for scrolling and rendering.
+- Fully customizable, inheriting all the props of `FlatList`.
+- Works seamlessly on both iOS and Android.
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## Installation
+
+![](https://github.com/faizqadri234/react-native-animated-components/blob/main/src/assets/AnimatedFlatlist.mp4)
+
+To install the package, use npm or yarn:
+
+```
+npm install react-native-animated-flatlist
+
+OR
+
+yarn add react-native-animated-flatlist
+
+```
+
+## Usage
+
+```tsx
+/**
+ * @Auther
+ * Muhammad Faiz
+ * faizqadri234@gmail.com
+ *
+ * 
+ */
+
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+
+import {AnimatedFlatList} from 'react-native-animated-flatlist';
+import {Data} from './src/mocks/FlatListData';
+
+function App(): React.JSX.Element {
+  return (
+    <View style={styles.container}>
+      <AnimatedFlatList
+        contentContainerStyle={{gap: 20, paddingTop: 100, flexGrow: 1}}
+        showsVerticalScrollIndicator={false}
+        data={Data}
+        renderItem={({item}) => {
+          return (
+            <View
+              style={{
+                borderRadius: 10,
+                paddingVertical: 20,
+                paddingHorizontal: 20,
+                backgroundColor: 'lightgreen',
+              }}>
+              <Text>{item.text}</Text>
+            </View>
+          );
+        }}
+      />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
+export default App;
+```
