@@ -71,10 +71,11 @@ You've successfully run and modified your React Native App. :partying_face:
 - Fully customizable, inheriting all the props of `FlatList`.
 - Works seamlessly on both iOS and Android.
 
+## Demo
+https://github.com/user-attachments/assets/f9661b71-8b94-426c-a29d-371a0256dacb
+
+
 ## Installation
-
-![](https://github.com/faizqadri234/react-native-animated-components/blob/main/src/assets/AnimatedFlatlist.mp4)
-
 To install the package, use npm or yarn:
 
 ```
